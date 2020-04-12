@@ -6,6 +6,7 @@
     text-align center
     margin auto
     padding 0 15px
+    line-height 1.5
 
     &.img-about
       background-image url("assets/about.svg")
@@ -20,8 +21,8 @@
       &.author
         font-weight 500
 
-        &:hover
-          color $color-text-primary
+      &:hover
+        color $color-text-primary
 </style>
 
 <div class="img-about"></div>
@@ -31,14 +32,14 @@
     <a class="author" href="https://shpakov.dev" target="_blank" rel="noopener">Mikhail Shpakov</a>
   </p>
   <p>
-    Пример реализации погодного приложения на
+    An example implementation of a weather application on
     <a href="https://svelte.dev/" target="_blank" rel="noopener">Svelte</a>
-    с использованием
+    using the
     <a href="https://openweathermap.org/api" target="_blank" rel="noopener">OpenWeather API</a>.
   </p>
   <p>
-    Полное описание доступно в
-    <a href="https://github.com/mikhail-shpakov/weather-app-on-svelte" target="_blank" rel="noopener">репозитории
-      приложения</a>.
+    Full description is available in the
+    <a href="https://github.com/mikhail-shpakov/weather-app-on-svelte" target="_blank" rel="noopener">application
+      repository</a>.
   </p>
 </div>

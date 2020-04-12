@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
-import { stylus, postcss, globalStyle } from 'svelte-preprocess'
+import { stylus, less, postcss } from 'svelte-preprocess'
 import copy from 'rollup-plugin-copy'
 
 const production = !process.env.ROLLUP_WATCH
@@ -27,7 +27,7 @@ export default {
       },
       preprocess: [
         stylus(),
-        globalStyle(),
+        less(),
         postcss({
           plugins: [require('autoprefixer')()],
         }),
@@ -35,7 +35,10 @@ export default {
     }),
 
     copy({
-      targets: [{ src: 'src/assets/**/*', dest: 'public/build/assets' }],
+      targets: [
+        { src: 'src/assets/**/*', dest: 'public/build/assets' },
+        { src: 'node_modules/weathericons/font/**/*', dest: 'public/font' }
+      ],
       verbose: true,
     }),
 
@@ -67,11 +70,11 @@ export default {
   },
 }
 
-function serve() {
+function serve () {
   let started = false
 
   return {
-    writeBundle() {
+    writeBundle () {
       if (!started) {
         started = true
 

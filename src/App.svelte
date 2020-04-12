@@ -9,7 +9,8 @@
 
   section.content
     max-width $display-width
-    margin 150px auto 80px
+    margin 150px auto 30px
+    height calc(100% - 30px)
 </style>
 
 <Navbar/>

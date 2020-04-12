@@ -17,8 +17,7 @@
       display flex
       width $display-width
       margin auto
-      @media (max-width $display-bp-mobile)
-        padding 0 10px
+      padding 0 10px
 
   div
     &.navbar-start, &.navbar-end
