@@ -36,6 +36,6 @@
 
 <div class="img-404"></div>
 <div>
-  <p class="title">Whoooops, that page is gone</p>
+  <p class="title">Whoooops, that page is gone.</p>
   <a class="button" href="/forecast" use:link>Back to Forecast</a>
 </div>

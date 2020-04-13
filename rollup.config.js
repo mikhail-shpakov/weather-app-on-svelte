@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import { stylus, less, postcss } from 'svelte-preprocess'
 import copy from 'rollup-plugin-copy'
+import replace from '@rollup/plugin-replace'
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -64,6 +65,15 @@ export default {
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),
+
+    replace({
+      // stringify the object
+      process: JSON.stringify({
+        env: {
+          OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY // attached the .env config
+        }
+      }),
+    }),
   ],
   watch: {
     clearScreen: false,

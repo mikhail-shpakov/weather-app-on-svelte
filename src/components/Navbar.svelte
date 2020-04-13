@@ -62,7 +62,7 @@
 
 <nav class="navbar">
   <div class="navbar-container">
-    <a class="logo" href="https://github.com/mikhail-shpakov/weather-app-on-svelte" target="_blank"
+    <a class="logo" href="https://shpakov.dev" target="_blank"
        rel="noopener"></a>
     <div class="navbar-start">
     </div>

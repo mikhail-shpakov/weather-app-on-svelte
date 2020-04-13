@@ -4,7 +4,7 @@
   div
     max-width 470px
     text-align center
-    margin auto
+    margin 0 auto 30px
     padding 0 15px
     line-height 1.5
 
