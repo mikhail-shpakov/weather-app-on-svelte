@@ -53,6 +53,7 @@
     "es6-shim": "^0.35.5",
     "less": "^3.11.1",
     "normalize.css": "^8.0.1",
+    "register-service-worker": "^1.7.1",
     "rollup-plugin-babel": "^4.4.0",
     "sirv-cli": "^0.4.4",
     "superagent": "^5.2.2",
