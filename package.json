@@ -1,7 +1,7 @@
 {
-  "name": "svelte-app",
+  "name": "weather-app-on-svelte",
   "version": "0.1.0",
-  "description": "Role based JWT demo project using Express and Vue",
+  "description": "Weather app on Svelte by Mikhail Shpakov",
   "author": "Mikhail Shpakov <mikhail.n.shpakov@gmail.com> (https://shpakov.dev/)",
   "bugs": {
     "url": "https://github.com/mikhail-shpakov/weather-app-on-svelte/issues"
