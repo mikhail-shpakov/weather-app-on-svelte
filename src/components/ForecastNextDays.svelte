@@ -8,7 +8,6 @@
     const fixDateForAllBrowsers = forecastList[0].dt_txt.replace(/-/g, '/');
 
     const d = new Date(fixDateForAllBrowsers.toString())
-    console.log(d)
     return days[d.getDay()]
   }
 
