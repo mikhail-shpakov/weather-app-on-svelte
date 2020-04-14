@@ -6,8 +6,7 @@
   import ForecastNextDays from '../components/ForecastNextDays.svelte'
   import Spinner from 'svelte-spinner'
 
-  // вставьте сюда ваш токен с OpenWeatherAPI
-  const appid = process.env.OPEN_WEATHER_API_KEY || process.env.open_weather_api_key
+  const appid = process.env.OPEN_WEATHER_API_KEY
   let feelsLike = 'unclear'
   let city = 'Saint Petersburg'
   let weather = []
@@ -37,11 +36,10 @@
 
     await superagent
         .get('https://api.openweathermap.org/data/2.5/forecast')
-        .query({ q: city, appid, units }) // query string
+        .query({ q: city, appid, units })
         .end((err, res) => {
           if (err) {
             isLoading = false
-
             errorRequest = true
             return
           }

@@ -1,4 +1,5 @@
 import svelte from 'rollup-plugin-svelte'
+import babel from 'rollup-plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
@@ -62,10 +63,6 @@ export default {
     // browser on changes when not in production
     !production && livereload('public'),
 
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
-
     replace({
       // stringify the object
       process: JSON.stringify({
@@ -74,7 +71,34 @@ export default {
         }
       }),
     }),
-  ],
+
+    babel({
+      extensions: [ '.js', '.mjs', '.html', '.svelte' ],
+      runtimeHelpers: true,
+      exclude: [ 'node_modules/@babel/**' ],
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: '> 0.25%, not dead'
+          }
+        ]
+      ],
+      plugins: [
+        '@babel/plugin-syntax-dynamic-import',
+        [
+          '@babel/plugin-transform-runtime',
+          {
+            useESModules: true
+          }
+        ]
+      ]
+    }),
+
+    // If we're building for production (npm run build
+    // instead of npm run dev), minify
+    production && terser(),
+],
   watch: {
     clearScreen: false,
   },
