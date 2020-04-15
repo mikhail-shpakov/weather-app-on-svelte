@@ -6,7 +6,7 @@
   import ForecastNextDays from '../components/ForecastNextDays.svelte'
   import Spinner from 'svelte-spinner'
 
-  const appid = '816cdeee226ae5af26b2ce6d6226e6e6'
+  const appid = process.env.OPEN_WEATHER_API_KEY
   let feelsLike = 'unclear'
   let city = 'Saint Petersburg'
   let weather = []
