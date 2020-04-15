@@ -6,7 +6,7 @@
   import ForecastNextDays from '../components/ForecastNextDays.svelte'
   import Spinner from 'svelte-spinner'
 
-  const appid = process.env.OPEN_WEATHER_API_KEY
+  const appid = '816cdeee226ae5af26b2ce6d6226e6e6'
   let feelsLike = 'unclear'
   let city = 'Saint Petersburg'
   let weather = []
@@ -92,7 +92,7 @@
         border none
         border-bottom 1px solid $color-text-secondary
         color $color-text-primary
-        font-weight 500
+        font-weight 600
         outline none
         font-size 24px
         text-align center
@@ -115,7 +115,7 @@
         min-height 320px
 
     & p span
-      font-weight 500
+      font-weight 600
 
   p.refAPI
     text-align center
@@ -128,7 +128,7 @@
       margin auto 10px 10px !important
 
   a
-    font-weight 500
+    font-weight 600
 
     &:hover
       color $color-text-primary

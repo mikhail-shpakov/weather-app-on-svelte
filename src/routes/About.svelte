@@ -19,7 +19,7 @@
 
     & a
       &.author
-        font-weight 500
+        font-weight 600
 
       &:hover
         color $color-text-primary

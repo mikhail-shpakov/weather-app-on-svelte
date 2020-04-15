@@ -1,9 +1,5 @@
 var cacheName = 'app-cache-' + Date.now()
-var filesToCache = [
-  '/',
-  '/index.html',
-  '/global.css'
-]
+var filesToCache = ['/', '/index.html', '/global.css']
 self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open(cacheName).then(function (cache) {
@@ -11,7 +7,7 @@ self.addEventListener('install', function (e) {
     })
   )
 })
-self.addEventListener('activate', e => {
+self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
@@ -24,7 +20,7 @@ self.addEventListener('activate', e => {
     })
   )
 })
-self.addEventListener('fetch', e => {
+self.addEventListener('fetch', (e) => {
   e.respondWith(
     (async function () {
       const response = await caches.match(e.request)

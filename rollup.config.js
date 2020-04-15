@@ -39,7 +39,7 @@ export default {
     copy({
       targets: [
         { src: 'src/assets/**/*', dest: 'public/build/assets' },
-        { src: 'node_modules/weathericons/font/**/*', dest: 'public/font' }
+        { src: 'node_modules/weathericons/font/**/*', dest: 'public/font' },
       ],
       verbose: true,
     }),
@@ -67,48 +67,48 @@ export default {
       // stringify the object
       process: JSON.stringify({
         env: {
-          OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY // attached the .env config
-        }
+          OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY, // attached the .env config
+        },
       }),
     }),
 
     babel({
-      extensions: [ '.js', '.mjs', '.html', '.svelte' ],
+      extensions: ['.js', '.mjs', '.html', '.svelte'],
       runtimeHelpers: true,
-      exclude: [ 'node_modules/@babel/**' ],
+      exclude: ['node_modules/@babel/**'],
       presets: [
         [
           '@babel/preset-env',
           {
-            targets: '> 0.25%, not dead'
-          }
-        ]
+            targets: '> 0.25%, not dead',
+          },
+        ],
       ],
       plugins: [
         '@babel/plugin-syntax-dynamic-import',
         [
           '@babel/plugin-transform-runtime',
           {
-            useESModules: true
-          }
-        ]
-      ]
+            useESModules: true,
+          },
+        ],
+      ],
     }),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),
-],
+  ],
   watch: {
     clearScreen: false,
   },
 }
 
-function serve () {
+function serve() {
   let started = false
 
   return {
-    writeBundle () {
+    writeBundle() {
       if (!started) {
         started = true
 
